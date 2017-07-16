@@ -1,3 +1,4 @@
+/** @namespace Object */
 
 module.exports = [
 	require('./object-copy'),

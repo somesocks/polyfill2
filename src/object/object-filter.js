@@ -15,16 +15,17 @@ function polyfill(test, _this) {
 	return dest;
 }
 
-/**
-* @name Object.filter
-* Create a shallow copy of an object, where some keys are filtered
-* @param source - the object to copy
-* @param {function(value, key, source)} filter - the filtering function, should return a boolean
-* @param _this - optional this argument to set in the filter
-* @returns a filtered copy of source
-*/
 function loader(override) {
 	if (!Object.filter || override) {
+		/**
+		* @name Object.filter
+		* @description Create a shallow copy of an object, where some keys are filtered
+		* @param source - the object to copy
+		* @param {function(value, key, source)} filter - the filtering function, should return a boolean
+		* @param _this - optional this argument to set in the filter
+		* @returns a filtered copy of source
+		* @memberof Object
+		*/
 		Object.filter = function (...args) { return polyfill.call(...args); };
 	}
 }

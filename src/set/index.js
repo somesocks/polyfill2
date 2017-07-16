@@ -1,3 +1,4 @@
+/** @namespace Set */
 
 module.exports = [
 	require('./set-filter'),

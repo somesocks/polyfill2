@@ -12,14 +12,15 @@ function polyfill() {
 	return dest;
 }
 
-/**
-* @name Object.copy
-* Create a shallow copy of an object
-* @param source - the object to copy
-* @returns a copy of source
-*/
 function loader(override) {
 	if (!Object.copy || override) {
+		/**
+		* @name Object.copy
+		* @description Create a shallow copy of an object
+		* @param source - the object to copy
+		* @returns a copy of source
+		* @memberof Object
+		*/
 		Object.copy = function (...args) { return polyfill.call(...args); };
 	}
 }
