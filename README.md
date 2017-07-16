@@ -67,11 +67,26 @@ Create a shallow copy of an object, where every value is mapped by a mapping fun
 
 * [Set](#Set) : <code>object</code>
     * _instance_
+        * [.complement](#Set+complement) ⇒
         * [.filter](#Set+filter) ⇒
+        * [.intersection](#Set+intersection) ⇒
         * [.map](#Set+map) ⇒
+        * [.union](#Set+union) ⇒
     * _static_
         * [.filter](#Set.filter) ⇒
         * [.map](#Set.map) ⇒
+
+<a name="Set+complement"></a>
+
+### set.complement ⇒
+Create a complement of this set and another (this AND NOT set)
+
+**Kind**: instance property of <code>[Set](#Set)</code>  
+**Returns**: this  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| set | <code>set</code> | the set to complement with |
 
 <a name="Set+filter"></a>
 
@@ -86,6 +101,18 @@ Create a shallow copy of a Set, where some keys are filtered
 | filter | <code>function</code> | the filtering function, should return a boolean |
 | _this |  | optional this argument to set in the filter |
 
+<a name="Set+intersection"></a>
+
+### set.intersection ⇒
+Create a union of this set and another (this AND set)
+
+**Kind**: instance property of <code>[Set](#Set)</code>  
+**Returns**: this  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| set | <code>set</code> | the set to intersct with |
+
 <a name="Set+map"></a>
 
 ### set.map ⇒
@@ -98,6 +125,18 @@ Create a shallow copy of a set, where every value is mapped by a mapping functio
 | --- | --- | --- |
 | map | <code>function</code> | the mapping function, should return a new value for each key-value pair |
 | _this |  | optional this argument to set in the map |
+
+<a name="Set+union"></a>
+
+### set.union ⇒
+Create a union of this set and another (this OR set)
+
+**Kind**: instance property of <code>[Set](#Set)</code>  
+**Returns**: this  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| set | <code>set</code> | the set to union with |
 
 <a name="Set.filter"></a>
 
