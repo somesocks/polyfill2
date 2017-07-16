@@ -1,8 +1,8 @@
 {
 	"name": "polyfill2",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"description": "A collection of nonstandard JS polyfills",
-	"main": "dist",
+	"main": "dist/polyfill2.js",
 	"scripts": {},
 	"repository": {
 		"type": "git",
