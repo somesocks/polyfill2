@@ -1,4 +1,7 @@
 
-require('./object-assign');
-require('./object-map');
-require('./object-filter');
+module.exports = [
+	require('./object-copy'),
+	require('./object-filter'),
+	require('./object-foreach'),
+	require('./object-map'),
+];

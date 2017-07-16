@@ -1,7 +1,7 @@
 {
 	"name": "polyfill2",
-	"version": "0.1.0",
-	"description": "A collection of standard and nonstandard JS polyfills",
+	"version": "0.2.0",
+	"description": "A collection of nonstandard JS polyfills",
 	"main": "dist",
 	"scripts": {},
 	"repository": {

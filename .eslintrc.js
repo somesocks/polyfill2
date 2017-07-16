@@ -7,6 +7,7 @@ module.exports = {
 		'import/newline-after-import': ['off'],
 		'arrow-body-style': ['warn', 'as-needed'],
 		'arrow-parens': ['warn', 'always'],
+		'no-bitwise': ['warn'],
 		'no-undef': ['error'],
 		'no-empty': ['warn'],
 		'no-unused-vars': ['warn'],

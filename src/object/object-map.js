@@ -1,30 +1,31 @@
 
-const Config = require('../config');
+function polyfill(map, _this) {
+	const dest = {};
 
-if (!Object.map || Config.alwaysOverride) {
-	Object.map = function (src, map, _this) {
-		const dest = {};
-
-		for (const key in src) {
-			// Avoid bugs when hasOwnProperty is shadowed
-			if (Object.prototype.hasOwnProperty.call(src, key)) {
-				const val = src[key];
-				dest[key] = map.call(_this, val, key, src);
-			}
+	for (const key in this) {
+		// Avoid bugs when hasOwnProperty is shadowed
+		if (Object.prototype.hasOwnProperty.call(this, key)) {
+			const val = this[key];
+			dest[key] = map.call(_this, val, key, this);
 		}
+	}
 
-		return dest;
-	};
+	return dest;
 }
 
-if (!Object.prototype.map || Config.alwaysOverride) {
-	Object.defineProperty(
-		Object.prototype,
-		'map',
-		{
-			value: function (test, _this) {
-				return Object.map(this, test, _this);
-			},
-		}
-	);
+/**
+* @name Object.map
+* Create a shallow copy of an object, where every value is mapped by a mapping function
+* @param source - the object to map
+* @param {function(value, key, source)} map - the mapping function, should return a new value for each key-value pair
+* @param _this - optional this argument to set in the map
+* @returns a mapped copy of source
+*/
+function loader(override) {
+	if (!Object.map || override) {
+		Object.map = function (...args) { return polyfill.call(...args); };
+	}
 }
+
+module.exports = loader;
+loader();
